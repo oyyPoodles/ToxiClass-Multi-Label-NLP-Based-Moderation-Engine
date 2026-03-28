@@ -7,7 +7,7 @@
 [![License](https://img.shields.io/github/license/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/blob/main/LICENSE)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/)
 
-# ToxiClass-Multi-Label-NLP-Based-Moderation-Engine
+# ToxiClass: Multi-Label NLP-Based Moderation Engine
 
 </div>
 
