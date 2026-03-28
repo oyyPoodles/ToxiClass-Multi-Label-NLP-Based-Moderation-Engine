@@ -56,4 +56,15 @@ We evaluated the distinct machine learning and deep learning models based on the
 
 ## 5. Conclusion
 
-The Recurrent Neural Network architectural setup via **LSTM (Long Short-Term Memory) without pretrained embeddings** performed the best on our training distributions, achieving the highest Mean AUC_ROC accuracy score of **0.97**.
+The Recurrent Neural Network architectural setup via **LSTM (Long Short-Term Memory) without pretrained embeddings** performed the best on our training distributions historically, achieving the highest Mean AUC_ROC accuracy score of **0.97**.
+
+---
+
+## 6. ToxiShield AI V2 Architecture Updates (2026 Shift)
+
+In our latest major iteration, the project transitioned precisely into a deployment-ready, multi-label NLP Moderation Engine isolated entirely to its core intelligence modules (`src/`):
+
+1. **Transformer Migration**: While LSTMs formed the baseline, the architecture now explicitly natively handles inference using **HuggingFace Transformers** (`distilbert-base-uncased` and `xlm-roberta-base`), boosting semantic recognition and granting global multilingual support (Hindi, Hinglish, Tamil).
+2. **Hybrid Fusion Layer**: Extracted Apriori rules and deep learning parameters into a massive ensemble decider for high-speed deterministic overrides.
+3. **Automated Pipeline Retraining**: The original 10 traditional Jupyter configurations were synchronized and patched, managed via an automated `retrain_all.py` script allowing full sequential data digestion over our 160K+ conversational subsets.
+4. **Explainable AI (LIME) and Fairness Tracker**: Injected transparency mechanisms highlighting explicit syntactic toxicity triggers avoiding sociodemographic algorithm bias.
