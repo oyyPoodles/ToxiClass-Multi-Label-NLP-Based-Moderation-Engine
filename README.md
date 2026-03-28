@@ -1,4 +1,15 @@
+<div align="center">
+
+[![Contributors](https://img.shields.io/github/contributors/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/graphs/contributors)
+[![Forks](https://img.shields.io/github/forks/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/network/members)
+[![Stars](https://img.shields.io/github/stars/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/stargazers)
+[![Issues](https://img.shields.io/github/issues/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/issues)
+[![License](https://img.shields.io/github/license/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine?style=for-the-badge)](https://github.com/oyyPoodles/ToxiClass-Multi-Label-NLP-Based-Moderation-Engine/blob/main/LICENSE)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/)
+
 # ToxiClass-Multi-Label-NLP-Based-Moderation-Engine
+
+</div>
 
 > **Author**: Ujjwal Chaudhary
 
