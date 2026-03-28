@@ -30,22 +30,105 @@ The exponential growth of online communities has inadvertently led to a rise in 
 The system architecture follows a structured NLP pipeline, translating raw text ingestion to final multi-label inference. The text undergoes rigorous cleaning and tokenization before being transformed by feature extraction techniques or dense word embeddings. These numerical representations are then classified by parallel predictive models for final aggregated toxicity flags.
 
 ```mermaid
-flowchart TD
-    A[User Input Text] --> B[Text Preprocessing]
-    B --> C[Tokenization & Cleaning]
-    C --> D[Feature Extraction]
+flowchart TB
 
-    D --> E1[TF-IDF / Bag of Words]
-    D --> E2[Word Embeddings<br>(FastText / GloVe / Word2Vec)]
+%% ================= CLIENT LAYER =================
+subgraph CL["🌐 Client Layer"]
+    A1[Web App<br/>React / TypeScript]
+    A2[Mobile App / Extension<br/>Android / Chrome]
+end
 
-    E1 --> F1[Traditional ML Models<br>(SVM, Logistic Regression, XGBoost)]
-    E2 --> F2[Deep Learning Models<br>(LSTM)]
+%% ================= API LAYER =================
+subgraph API["⚙️ API Gateway Layer"]
+    B1[/api/detect<br/>Text Input/]
+    B2[/api/auth<br/>JWT Authentication/]
+    B3[/api/history<br/>User Logs/]
+    B4[Rate Limiter<br/>60 req/min]
+end
 
-    F1 --> G[Prediction Layer]
-    F2 --> G
+%% ================= PROCESSING =================
+subgraph PROC["🧹 Preprocessing Layer"]
+    C1[Text Cleaning<br/>Lowercase, Stopwords]
+    C2[Tokenization<br/>Lemmatization]
+end
 
-    G --> H[Multi-label Classification Output]
-    H --> I[Toxicity Categories<br>(Toxic, Obscene, Threat, Insult, Hate)]
+%% ================= FEATURE ENGINEERING =================
+subgraph FE["🧠 Feature Engineering"]
+    D1[TF-IDF / Bag of Words]
+    D2[Word Embeddings<br/>FastText / GloVe]
+end
+
+%% ================= ML ENGINE =================
+subgraph ML["🤖 ML / DL Engine"]
+    E1[Traditional Models<br/>SVM / Logistic Regression / XGBoost]
+    E2[Deep Learning Models<br/>LSTM / BiLSTM]
+end
+
+%% ================= PREDICTION =================
+subgraph PRED["📊 Prediction Layer"]
+    F1[Sigmoid Activation]
+    F2[Multi-label Output]
+end
+
+%% ================= DATA LAYER =================
+subgraph DB["🗄️ Data Layer"]
+    G1[(Dataset<br/>Jigsaw Toxic Comments)]
+    G2[(User Data & Logs)]
+    G3[(Trained Models<br/>.pkl / .h5)]
+end
+
+%% ================= FLOW =================
+
+%% Client → API
+A1 --> B1
+A2 --> B1
+
+A1 --> B2
+A2 --> B2
+
+%% API Routing
+B1 --> C1
+B2 --> G2
+B3 --> G2
+B4 --> B1
+
+%% Processing
+C1 --> C2
+C2 --> D1
+C2 --> D2
+
+%% Feature → Models
+D1 --> E1
+D2 --> E2
+
+%% Model Fusion
+E1 --> F1
+E2 --> F1
+
+%% Output
+F1 --> F2
+F2 --> B1
+
+%% Storage
+E1 --> G3
+E2 --> G3
+G1 --> E1
+G1 --> E2
+
+%% ================= STYLING =================
+classDef client fill:#0d47a1,color:#fff;
+classDef api fill:#1b5e20,color:#fff;
+classDef process fill:#4a148c,color:#fff;
+classDef model fill:#e65100,color:#fff;
+classDef data fill:#263238,color:#fff;
+classDef pred fill:#880e4f,color:#fff;
+
+class A1,A2 client;
+class B1,B2,B3,B4 api;
+class C1,C2,D1,D2 process;
+class E1,E2 model;
+class G1,G2,G3 data;
+class F1,F2 pred;
 ```
 
 ## 📊 5. Dataset Statistics
